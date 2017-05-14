@@ -18,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
+        
+        let userDefault = UserDefaults.standard
+        let savedData = userDefault.bool(forKey: "isLoggedIn")
+        if(savedData) { // check if user is logged out yet
+            let storyBoard = UIStoryboard(name: "Main" , bundle: nil)
+            let navigationRoot = storyBoard.instantiateViewController(withIdentifier: "navigationController")
+            window?.rootViewController = navigationRoot
+            window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 
