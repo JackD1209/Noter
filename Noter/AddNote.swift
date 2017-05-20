@@ -7,13 +7,13 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
 
 class AddNote: UIViewController {
 
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteContent: UITextView!
+    
+    let model = noteModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +26,6 @@ class AddNote: UIViewController {
     }
 
     @IBAction func doneButton(_ sender: UIBarButtonItem) {
-        let databaseRef: FIRDatabaseReference!
-        let user = FIRAuth.auth()!.currentUser
-        
         if noteTitle.text == nil {
             if noteContent.text == nil {
                 self.showAlert("Please input your note")
@@ -39,8 +36,7 @@ class AddNote: UIViewController {
         }
         else {
             let post = ["title" : noteTitle.text!, "content": noteContent.text!]
-            databaseRef = FIRDatabase.database().reference()
-            databaseRef.child(user!.uid).childByAutoId().setValue(post) // add note to firebase database for current user
+            model.addData(post)
             self.navigationController?.popViewController(animated: true)
         }
     }

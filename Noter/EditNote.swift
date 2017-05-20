@@ -7,13 +7,14 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
 
 class EditNote: UIViewController {
 
     @IBOutlet weak var editNoteTitle: UILabel!
     @IBOutlet weak var editNoteContent: UITextView!
+    
+    let model = noteModel()
+    
     var editTitle: String?
     var editContent: String?
     var editKey: String?
@@ -31,11 +32,8 @@ class EditNote: UIViewController {
     }
 
     @IBAction func editNote(_ sender: UIBarButtonItem) {
-        let databaseRef: FIRDatabaseReference!
-        let user = FIRAuth.auth()!.currentUser
         let post = ["title" : editTitle!, "content": editNoteContent.text!]
-        databaseRef = FIRDatabase.database().reference().child("\(user!.uid)/\(editKey!)") // edit the note from firebase
-        databaseRef.updateChildValues(post)
+        model.editData(post, editKey!)
         self.navigationController?.popViewController(animated: true)
     }
 }

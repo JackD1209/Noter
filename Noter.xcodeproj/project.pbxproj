@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		47DD32CCB401223D4F3B5A9B /* Pods_NoterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE28A10DC8716A0CBBD98FF /* Pods_NoterUITests.framework */; };
 		6131F309607516016C5AB36A /* Pods_NoterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732E2CD9852970C3B73E2A77 /* Pods_NoterTests.framework */; };
+		91A55FAC1ECEE83C00E39DCB /* noterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A55FAB1ECEE83C00E39DCB /* noterModel.swift */; };
 		91CB57DC1EBDB83700F32D00 /* EditNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CB57DB1EBDB83700F32D00 /* EditNote.swift */; };
 		91D368A91EB1E60400071E61 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D368A81EB1E60400071E61 /* LoginScreen.swift */; };
 		91D368AB1EB2169C00071E61 /* NotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D368AA1EB2169C00071E61 /* NotesScreen.swift */; };
@@ -46,6 +47,7 @@
 		5C9868803E4B8C3C2EFC2BA6 /* Pods-Noter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Noter.release.xcconfig"; path = "Pods/Target Support Files/Pods-Noter/Pods-Noter.release.xcconfig"; sourceTree = "<group>"; };
 		732E2CD9852970C3B73E2A77 /* Pods_NoterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NoterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80AE0179D79BEC89EE874440 /* Pods-NoterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoterUITests/Pods-NoterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		91A55FAB1ECEE83C00E39DCB /* noterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = noterModel.swift; sourceTree = "<group>"; };
 		91CB57DB1EBDB83700F32D00 /* EditNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNote.swift; sourceTree = "<group>"; };
 		91D368A81EB1E60400071E61 /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		91D368AA1EB2169C00071E61 /* NotesScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesScreen.swift; sourceTree = "<group>"; };
@@ -109,6 +111,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		91E04BD11ED0407C00CC5B17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				91A55FAB1ECEE83C00E39DCB /* noterModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		91E04BD21ED0408900CC5B17 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				91D368A81EB1E60400071E61 /* LoginScreen.swift */,
+				91D368AA1EB2169C00071E61 /* NotesScreen.swift */,
+				91D368AE1EB22C2D00071E61 /* AddNote.swift */,
+				91CB57DB1EBDB83700F32D00 /* EditNote.swift */,
+				91F070861EBEF97900AF94AF /* NoteCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		91E04BD31ED0409200CC5B17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				91E81C0C1EAB2A36007A1762 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		91E81BFC1EAB2A36007A1762 = {
 			isa = PBXGroup;
 			children = (
@@ -135,16 +165,13 @@
 			isa = PBXGroup;
 			children = (
 				91E81C081EAB2A36007A1762 /* AppDelegate.swift */,
-				91E81C0C1EAB2A36007A1762 /* Main.storyboard */,
 				91E81C0F1EAB2A36007A1762 /* Assets.xcassets */,
 				91E81C111EAB2A36007A1762 /* LaunchScreen.storyboard */,
 				91E81C141EAB2A36007A1762 /* Info.plist */,
 				91E81C361EAB2AC5007A1762 /* GoogleService-Info.plist */,
-				91D368A81EB1E60400071E61 /* LoginScreen.swift */,
-				91D368AA1EB2169C00071E61 /* NotesScreen.swift */,
-				91D368AE1EB22C2D00071E61 /* AddNote.swift */,
-				91CB57DB1EBDB83700F32D00 /* EditNote.swift */,
-				91F070861EBEF97900AF94AF /* NoteCell.swift */,
+				91E04BD31ED0409200CC5B17 /* View */,
+				91E04BD21ED0408900CC5B17 /* Controller */,
+				91E04BD11ED0407C00CC5B17 /* Model */,
 			);
 			path = Noter;
 			sourceTree = "<group>";
@@ -465,6 +492,7 @@
 				91D368AF1EB22C2D00071E61 /* AddNote.swift in Sources */,
 				91E81C091EAB2A36007A1762 /* AppDelegate.swift in Sources */,
 				91D368AB1EB2169C00071E61 /* NotesScreen.swift in Sources */,
+				91A55FAC1ECEE83C00E39DCB /* noterModel.swift in Sources */,
 				91F070871EBEF97900AF94AF /* NoteCell.swift in Sources */,
 				91CB57DC1EBDB83700F32D00 /* EditNote.swift in Sources */,
 				91D368A91EB1E60400071E61 /* LoginScreen.swift in Sources */,

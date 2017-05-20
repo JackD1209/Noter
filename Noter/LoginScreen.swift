@@ -13,8 +13,10 @@ class LoginScreen: UIViewController {
 
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var signupView: UIView!
+    
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
+    
     @IBOutlet weak var signupName: UITextField!
     @IBOutlet weak var signupEmail: UITextField!
     @IBOutlet weak var signupPassword: UITextField!
