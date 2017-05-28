@@ -34,7 +34,6 @@ class NotesScreen: UIViewController, UITableViewDataSource, UITableViewDelegate,
     }
     
     func gotData(notes: [note]) {
-        print(notes.count)
         notesList.reloadData()
     }
     
